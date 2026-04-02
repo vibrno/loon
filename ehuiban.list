@@ -5,3 +5,28 @@ DOMAIN-SUFFIX,chutianyun.com.cn,DIRECT
 DOMAIN-KEYWORD,ehuiban,DIRECT
 DOMAIN-SUFFIX,gzwfw.gov.cn,DIRECT
 DOMAIN-SUFFIX,gjzwfw.gov.cn,DIRECT
+# 湖北政务主域名
+DOMAIN-SUFFIX,hubei.gov.cn,DIRECT
+DOMAIN-SUFFIX,zwfw.hubei.gov.cn,DIRECT       # 湖北政务服务网[[__LINK_ICON]](https://www.gz.gov.cn/ysgz/tzzc/djcc/yszc/content/post_9680622.html?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiIzMWVmMjkxMTFlMDkzOTgwLWY5MjI3YmI3NmNkNmJhZTkifQ%3D%3D "__LINK_ICON")
+DOMAIN-SUFFIX,cty.com.cn,DIRECT             # 楚天云（运营方）
+DOMAIN-SUFFIX,chutianyun.com.cn,DIRECT
+DOMAIN-SUFFIX,ehuiban.cn,DIRECT
+DOMAIN-SUFFIX,ehuiban.com,DIRECT
+
+# 鄂汇办关键字（含API/子域）
+DOMAIN-KEYWORD,ehuiban,DIRECT
+DOMAIN-KEYWORD,hbzw,DIRECT
+DOMAIN-KEYWORD,cty-hb,DIRECT
+DOMAIN-KEYWORD,zwfw-hubei,DIRECT
+
+# 国家政务平台（必加）
+DOMAIN-SUFFIX,gjzwfw.gov.cn,DIRECT
+DOMAIN-SUFFIX,gzwfw.gov.cn,DIRECT
+DOMAIN-SUFFIX,openapi.gov.cn,DIRECT
+
+# 湖北政务相关业务子域（常见）
+DOMAIN-SUFFIX,zsrx.whebd.cn,DIRECT          # 武汉入学招生
+DOMAIN-SUFFIX,bdcyc.mnr.gov.cn,DIRECT        # 不动产一窗办事[[__LINK_ICON]](https://www.gz.gov.cn/ysgz/tzzc/djcc/yszc/content/post_9680622.html?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiIzMWVmMjkxMTFlMDkzOTgwLWY5MjI3YmI3NmNkNmJhZTkifQ%3D%3D "__LINK_ICON")
+DOMAIN-SUFFIX,hrss.hubei.gov.cn,DIRECT       # 人社
+DOMAIN-SUFFIX,ybj.hubei.gov.cn,DIRECT        # 医保
+DOMAIN-SUFFIX,gatj.hubei.gov.cn,DIRECT       # 公安交通
