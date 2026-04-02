@@ -1,32 +1,47 @@
 # > ehuiban
-BUNDLE-ID,cn.cty.hbzw,DIRECT  
+# ==============================================
+# Loon 鄂汇办 防VPN检测 终极规则
+# ==============================================
+
+# 1. 进程 + Bundle ID 最高优先级直连（防穿透）
+PROCESS-NAME,cn.cty.hbzw,DIRECT
+BUNDLE-ID,cn.cty.hbzw,DIRECT
+BUNDLE-ID,cn.cty.hbzw.*,DIRECT
+
+# 2. 域名全量直连
 DOMAIN-SUFFIX,hubei.gov.cn,DIRECT
-DOMAIN-SUFFIX,chutianyun.com.cn,DIRECT
-DOMAIN-KEYWORD,ehuiban,DIRECT
-DOMAIN-SUFFIX,gzwfw.gov.cn,DIRECT
-DOMAIN-SUFFIX,gjzwfw.gov.cn,DIRECT
-# 湖北政务主域名
-DOMAIN-SUFFIX,hubei.gov.cn,DIRECT
-DOMAIN-SUFFIX,zwfw.hubei.gov.cn,DIRECT       # 湖北政务服务网[[__LINK_ICON]](https://www.gz.gov.cn/ysgz/tzzc/djcc/yszc/content/post_9680622.html?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiIzMWVmMjkxMTFlMDkzOTgwLWY5MjI3YmI3NmNkNmJhZTkifQ%3D%3D "__LINK_ICON")
-DOMAIN-SUFFIX,cty.com.cn,DIRECT             # 楚天云（运营方）
+DOMAIN-SUFFIX,zwfw.hubei.gov.cn,DIRECT
+DOMAIN-SUFFIX,cty.com.cn,DIRECT
 DOMAIN-SUFFIX,chutianyun.com.cn,DIRECT
 DOMAIN-SUFFIX,ehuiban.cn,DIRECT
 DOMAIN-SUFFIX,ehuiban.com,DIRECT
-
-# 鄂汇办关键字（含API/子域）
-DOMAIN-KEYWORD,ehuiban,DIRECT
-DOMAIN-KEYWORD,hbzw,DIRECT
-DOMAIN-KEYWORD,cty-hb,DIRECT
-DOMAIN-KEYWORD,zwfw-hubei,DIRECT
-
-# 国家政务平台（必加）
 DOMAIN-SUFFIX,gjzwfw.gov.cn,DIRECT
 DOMAIN-SUFFIX,gzwfw.gov.cn,DIRECT
 DOMAIN-SUFFIX,openapi.gov.cn,DIRECT
+DOMAIN-SUFFIX,zsrx.whebd.cn,DIRECT
+DOMAIN-SUFFIX,bdcyc.mnr.gov.cn,DIRECT
+DOMAIN-SUFFIX,hrss.hubei.gov.cn,DIRECT
+DOMAIN-SUFFIX,ybj.hubei.gov.cn,DIRECT
+DOMAIN-SUFFIX,gatj.hubei.gov.cn,DIRECT
 
-# 湖北政务相关业务子域（常见）
-DOMAIN-SUFFIX,zsrx.whebd.cn,DIRECT          # 武汉入学招生
-DOMAIN-SUFFIX,bdcyc.mnr.gov.cn,DIRECT        # 不动产一窗办事[[__LINK_ICON]](https://www.gz.gov.cn/ysgz/tzzc/djcc/yszc/content/post_9680622.html?f_link_type=f_linkinlinenote&flow_extra=eyJpbmxpbmVfZGlzcGxheV9wb3NpdGlvbiI6MCwiZG9jX3Bvc2l0aW9uIjowLCJkb2NfaWQiOiIzMWVmMjkxMTFlMDkzOTgwLWY5MjI3YmI3NmNkNmJhZTkifQ%3D%3D "__LINK_ICON")
-DOMAIN-SUFFIX,hrss.hubei.gov.cn,DIRECT       # 人社
-DOMAIN-SUFFIX,ybj.hubei.gov.cn,DIRECT        # 医保
-DOMAIN-SUFFIX,gatj.hubei.gov.cn,DIRECT       # 公安交通
+# 3. 关键词
+DOMAIN-KEYWORD,ehuiban,DIRECT
+DOMAIN-KEYWORD,hbzw,DIRECT
+DOMAIN-KEYWORD,cty-hubei,DIRECT
+DOMAIN-KEYWORD,zwfw-hubei,DIRECT
+
+# 4. 湖北政务IP（no-resolve 防二次解析）
+IP-CIDR,113.57.192.0/24,DIRECT,no-resolve
+IP-CIDR,119.96.168.0/22,DIRECT,no-resolve
+IP-CIDR,219.140.60.0/24,DIRECT,no-resolve
+IP-CIDR,221.232.128.0/17,DIRECT,no-resolve
+IP-CIDR,59.175.0.0/16,DIRECT,no-resolve
+IP-CIDR,202.103.0.0/16,DIRECT,no-resolve
+IP-CIDR,218.104.0.0/16,DIRECT,no-resolve
+IP-CIDR,58.16.0.0/12,DIRECT,no-resolve
+IP-CIDR,111.172.0.0/12,DIRECT,no-resolve
+
+# 5. 强制端口+UDP直连（防特征检测）
+AND,(PROCESS-NAME,cn.cty.hbzw),(DST-PORT,80),DIRECT
+AND,(PROCESS-NAME,cn.cty.hbzw),(DST-PORT,443),DIRECT
+AND,(PROCESS-NAME,cn.cty.hbzw),(NETWORK,udp),DIRECT
